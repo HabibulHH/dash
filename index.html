@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DASH Video Player</title>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</head>
+<body>
+    <h1>DASH Video Player</h1>
+    <video id="videoPlayer" controls></video>
+    <script>
+        // Use the URL to the DASH manifest provided by your API endpoint
+        const url = 'http://localhost:3000/video.mpd';
+        const player = dashjs.MediaPlayer().create();
+        player.initialize(document.querySelector("#videoPlayer"), url, true);
+    </script>
+</body>
+</html>
